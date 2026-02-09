@@ -1,8 +1,18 @@
-<%- include("../partials/head") %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= headTitle %></title>
+</head>
 <body>
-    <header class="header"></header>
-    <main class="main">
-	</main>
-    <footer class="footer"></footer>
+    <%- include('../partials/head') %>
+    <main>
+        <section class="welcome">
+            <h1>Asian Zoo Exhibition</h1>
+            <p><%= welcomeMessage %></p>
+        </section>
+    </main>
+    <%- include('../partials/footer') %>
 </body>
 </html>

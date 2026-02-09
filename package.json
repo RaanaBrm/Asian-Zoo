@@ -6,13 +6,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --watch index.js"
+    "start": "node --watch index.js",
+    "dev": "nodemon index.js"
   },
   "author": "Raana, Brianna, Maho",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^17.2.4",
-    "express": "^5.2.1",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
     "nodemon": "^3.1.11"
   }
 }
