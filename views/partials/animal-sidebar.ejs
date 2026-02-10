@@ -1,0 +1,20 @@
+<div class="animal__sidebar">
+    <h3>here is the sidebar</h3>
+    <% if (locals.pageType) { %>
+        <% if(pageType === "japan") { %>
+            <% animalList.filter(list => list.country ==="japan").forEach( list => {  %>
+                <li><a href="/japanese-animals?id=<%= list.id %>"><%= list.name %></a></li>
+            <% });  %>
+        <%} else if (pageType === "iran") {%>
+        <% animalList.filter(list => list.country ==="iran").forEach( list => {  %>
+            <li><a href="/iraninan-animals?id=<%= list.id %>"><%= list.name %></a></li>
+        <% });  %>
+        <% }else if(pageType === "china") { %>
+            <% animalList.filter(list => list.country ==="china").forEach( list => {  %>
+                <li><a href="/chinese-animals?id=<%= list.id %>"><%= list.name %></a></li>
+            <% });  %>
+        <%} else { %>
+            <p>Select the country</p>
+        <%} %>
+    <%}%>
+</div>
