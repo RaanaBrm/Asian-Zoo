@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= headTitle %></title>
-  </head>
-  <body>
-    <%- include('../partials/head') %>
+<%- include('../partials/head') %>
+<body>
+  <%- include('../partials/header') %>
 
-    <main>
-      <% if (!selectedAnimal) { %>
+  <main>
+    <% if (!selectedAnimal) { %>
       <section class="welcome">
         <h1>Asian Zoo Exhibition</h1>
         <p><%= welcomeMessage %></p>
@@ -19,19 +13,19 @@
         <h2>Animals</h2>
         <ul>
           <% animalList.forEach(animal => { %>
-          <li>
-            <a href="/persian-animals?id=<%= animal.id %>">
-              <%= animal.name %>
-            </a>
-            — <%= animal.type %>
-          </li>
+            <li>
+              <a href="/persian-animals?id=<%= animal.id %>">
+                <%= animal.name %>
+              </a>
+              — <%= animal.type %>
+            </li>
           <% }) %>
         </ul>
       </section>
-      <% } %>
+    <% } %>
 
+    <% if (selectedAnimal) { %>
       <section class="animal__content">
-        <% if (selectedAnimal) { %>
         <a href="/persian-animals">Back</a>
 
         <h1><%= selectedAnimal.name %></h1>
@@ -48,10 +42,10 @@
         <p><strong>Weight:</strong> <%= selectedAnimal.weight %></p>
         <p><strong>Food:</strong> <%= selectedAnimal.food %></p>
         <p><strong>Description:</strong> <%= selectedAnimal.description %></p>
-        <% } else { %> <% } %>
       </section>
-    </main>
+    <% } %>
+  </main>
 
-    <%- include('../partials/footer') %>
-  </body>
+  <%- include('../partials/footer') %>
+</body>
 </html>
