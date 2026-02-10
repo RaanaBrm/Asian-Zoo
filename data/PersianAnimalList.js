@@ -8,7 +8,7 @@ export const PersianAnimalList = [
     food: "Insects, larvae",
     description:
       "The hoopoe is a distinctive bird native to Iran and many parts of the Middle East.",
-    image: "hoodhood.png",
+    image: "hodhood.png",
   },
   {
     id: "persian-partridge",
