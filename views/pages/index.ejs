@@ -1,9 +1,9 @@
-<%- include('../partials/head') %>
-<body>
-  <%- include('../partials/header') %>
-
-  <main>
-    <% if (!selectedAnimal) { %>
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %>
+  <body>
+    <main>
+      <% if (!selectedAnimal) { %>
       <section class="welcome">
         <h1>Asian Zoo Exhibition</h1>
         <p><%= welcomeMessage %></p>
@@ -13,18 +13,16 @@
         <h2>Animals</h2>
         <ul>
           <% animalList.forEach(animal => { %>
-            <li>
-              <a href="/persian-animals?id=<%= animal.id %>">
-                <%= animal.name %>
-              </a>
-              — <%= animal.type %>
-            </li>
+          <li>
+            <a href="/persian-animals?id=<%= animal.id %>">
+              <%= animal.name %>
+            </a>
+            — <%= animal.type %>
+          </li>
           <% }) %>
         </ul>
       </section>
-    <% } %>
-
-    <% if (selectedAnimal) { %>
+      <% } %> <% if (selectedAnimal) { %>
       <section class="animal__content">
         <a href="/persian-animals">Back</a>
 
@@ -42,10 +40,11 @@
         <p><strong>Weight:</strong> <%= selectedAnimal.weight %></p>
         <p><strong>Food:</strong> <%= selectedAnimal.food %></p>
         <p><strong>Description:</strong> <%= selectedAnimal.description %></p>
+        <% } %>
       </section>
-    <% } %>
-  </main>
+      <% } %>
+    </main>
 
-  <%- include('../partials/footer') %>
-</body>
+    <%- include('../partials/footer') %>
+  </body>
 </html>
