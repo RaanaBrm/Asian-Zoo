@@ -1,12 +1,50 @@
-<%- include('../partials/head') %>
-<body>
-    <%- include('../partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %>
+  <body>
     <main>
-        <section class="welcome">
-            <h1>Asian Zoo Exhibition</h1>
-            <p><%= welcomeMessage %></p>
-        </section>
+      <% if (!selectedAnimal) { %>
+      <section class="welcome">
+        <h1>Asian Zoo Exhibition</h1>
+        <p><%= welcomeMessage %></p>
+      </section>
+
+      <section class="animal-list">
+        <h2>Animals</h2>
+        <ul>
+          <% animalList.forEach(animal => { %>
+          <li>
+            <a href="/persian-animals?id=<%= animal.id %>">
+              <%= animal.name %>
+            </a>
+            — <%= animal.type %>
+          </li>
+          <% }) %>
+        </ul>
+      </section>
+      <% } %> <% if (selectedAnimal) { %>
+      <section class="animal__content">
+        <a href="/persian-animals">Back</a>
+
+        <h1><%= selectedAnimal.name %></h1>
+
+        <img
+          src="/images/<%= selectedAnimal.image %>"
+          alt="<%= selectedAnimal.name %>"
+          width="300"
+        />
+
+        <p><strong>Type:</strong> <%= selectedAnimal.type %></p>
+        <p><strong>Country:</strong> <%= selectedAnimal.country %></p>
+        <p><strong>Size:</strong> <%= selectedAnimal.size %></p>
+        <p><strong>Weight:</strong> <%= selectedAnimal.weight %></p>
+        <p><strong>Food:</strong> <%= selectedAnimal.food %></p>
+        <p><strong>Description:</strong> <%= selectedAnimal.description %></p>
+        <% } %>
+      </section>
+      <% } %>
     </main>
+
     <%- include('../partials/footer') %>
-</body>
+  </body>
 </html>

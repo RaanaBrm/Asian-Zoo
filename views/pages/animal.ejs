@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= headTitle %></title>
+  </head>
+  <body>
+    <a href="/persian-animals">Back</a>
+
+    <h1><%= animal.name %></h1>
+
+    <img
+      src="/images/<%= animal.image %>"
+      alt="<%= animal.name %>"
+      width="300"
+    />
+
+    <p><strong>Type:</strong> <%= animal.type %></p>
+    <p><strong>Size:</strong> <%= animal.size %></p>
+    <p><strong>Weight:</strong> <%= animal.weight %></p>
+    <p><strong>Food:</strong> <%= animal.food %></p>
+    <p><strong>Description:</strong> <%= animal.description %></p>
+  </body>
+</html>
