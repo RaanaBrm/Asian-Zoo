@@ -8,18 +8,25 @@
   <body>
     <a href="/persian-animals">Back</a>
 
-    <h1><%= animal.name %></h1>
+    <% if (selectedAnimal) { %>
 
-    <img
-      src="/images/<%= animal.image %>"
-      alt="<%= animal.name %>"
-      width="300"
-    />
+      <h1><%= selectedAnimal.name %></h1>
 
-    <p><strong>Type:</strong> <%= animal.type %></p>
-    <p><strong>Size:</strong> <%= animal.size %></p>
-    <p><strong>Weight:</strong> <%= animal.weight %></p>
-    <p><strong>Food:</strong> <%= animal.food %></p>
-    <p><strong>Description:</strong> <%= animal.description %></p>
+      <img
+        src="/images/<%= selectedAnimal.image %>"
+        alt="<%= animal.name %>"
+        width="300"
+      />
+
+      <p><strong>Type:</strong> <%= selectedAnimal.type %></p>
+      <p><strong>Size:</strong> <%= selectedAnimal.size %></p>
+      <p><strong>Weight:</strong> <%= selectedAnimal.weight %></p>
+      <p><strong>Food:</strong> <%= selectedAnimal.food %></p>
+      <p><strong>Description:</strong> <%= selectedAnimal.description %></p>
+
+    <%} else { %>
+      <p>please select</p>
+    <% } %>
+
   </body>
 </html>
