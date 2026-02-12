@@ -11,7 +11,7 @@ persianAnimalRouter.get("/", (req, res) => {
 
   res.render(path.join(__dirname, "/views/pages/animal.ejs"), {
     headTitle: "Persian Animals",
-    pageType: "iran",
+    pageType: "Iran",
     animalList: animalList,
     selectedAnimal: animal,
   });

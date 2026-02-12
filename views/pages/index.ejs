@@ -3,33 +3,44 @@
   <%- include('../partials/head') %>
   <body>
     <%- include('../partials/header') %>
+    <!-- hero -->
+    <%- include('../partials/hero') %>
+
     <main class="main">
       <%- include('../partials/sidebar') %>
       <% if (!selectedAnimal) { %>
-      <section class="welcome">
-        <h1>Asian Zoo Exhibition</h1>
+        <div class="home-intro-container">
+          <div class="home-text">
+        <h1>Where Asian wildlife meets culture and tradition</h1>
         <p><%= welcomeMessage %></p>
-      </section>
-
+        </div>
+        <div class="home-image">
+                <img src="/images/home-intro.jpeg" alt="Zoo Interaction">
+        </div>
+      
+      </div>
       <% } %> 
+
+
       <% if (selectedAnimal) { %>
-      <section class="animal__content">
-        <h1><%= selectedAnimal.name %></h1>
+      <div class="animal-details-card">
+          <h1><%= selectedAnimal.name %></h1>
+          <p><strong>Type:</strong> <%= selectedAnimal.type %></p>
+          <p><strong>Size:</strong> <%= selectedAnimal.size %></p>
+          <p><strong>Weight:</strong> <%= selectedAnimal.weight %></p>
+          <p><strong>Food:</strong> <%= selectedAnimal.food %></p>
+          
+          <img
+            src="/images/<%= selectedAnimal.image %>"
+            alt="<%= selectedAnimal.name %>"
+            width="300" 
+            class="details-image"
+          />
+      
+          <p class="description"><strong>Description:</strong> <%= selectedAnimal.description %></p>
+          <a href="/<%=headTitle.toLowerCase().replace(/ /g, "-") %>">Back</a>
+          </div>-
 
-        <img
-          src="/images/<%= selectedAnimal.image %>"
-          alt="<%= selectedAnimal.name %>"
-          width="300"
-        />
-
-        <p><strong>Type:</strong> <%= selectedAnimal.type %></p>
-        <p><strong>Country:</strong> <%= selectedAnimal.country %></p>
-        <p><strong>Size:</strong> <%= selectedAnimal.size %></p>
-        <p><strong>Weight:</strong> <%= selectedAnimal.weight %></p>
-        <p><strong>Food:</strong> <%= selectedAnimal.food %></p>
-        <p><strong>Description:</strong> <%= selectedAnimal.description %></p>
-
-      </section>
       <% } %>
     </main>
 

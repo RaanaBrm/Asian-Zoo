@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
   console.log(animal);
   res.render("pages/index", {
     headTitle: "Asian Zoo | Home",
-    welcomeMessage: "Welcome to our special exhibition of Asian wildlife!",
+    welcomeMessage: "Welcome to our zoo page, where adventure and discovery await! Explore the fascinating world of animals, from the quirky quokka to the majestic cassowary. Immerse yourself in the beauty of nature and learn about creatures from all corners of the globe. We're thrilled to have you here—let's embark on this wild journey together!",
     pageType: "index",
     animalList: animalList,
     selectedAnimal: animal,
