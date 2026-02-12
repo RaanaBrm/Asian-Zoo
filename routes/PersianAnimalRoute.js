@@ -1,18 +1,19 @@
 import express from "express";
-import { PersianAnimalList } from "../data/PersianAnimalList.js";
+import { animalList } from "../data/animalList.js";
 
 const router = express.Router();
 
-router.get("/persian-animals", (req, res) => {
-  const animal = PersianAnimalList.find(
-    (animalList) => animalList.id === req.query.id
-  );
+router.get("/", (req, res) => {
+  const persianAnimals = animalList.filter(a => a.country === "iran");
+
+  const selectedAnimal =
+    persianAnimals.find(a => a.id === req.query.id) || null;
 
   res.render("pages/index", {
-    headTitle: "Asian Zoo",
+    headTitle: "Asian Zoo | Persian Animals",
     welcomeMessage: "Welcome! Click an animal name to see its details.",
-    animalList: PersianAnimalList,
-    selectedAnimal: animal || null,
+    animalList: persianAnimals,
+    selectedAnimal,
   });
 });
 
