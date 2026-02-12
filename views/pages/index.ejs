@@ -2,30 +2,18 @@
 <html lang="en">
   <%- include('../partials/head') %>
   <body>
-    <main>
+    <%- include('../partials/header') %>
+    <main class="main">
+      <%- include('../partials/sidebar') %>
       <% if (!selectedAnimal) { %>
       <section class="welcome">
         <h1>Asian Zoo Exhibition</h1>
         <p><%= welcomeMessage %></p>
       </section>
 
-      <section class="animal-list">
-        <h2>Animals</h2>
-        <ul>
-          <% animalList.forEach(animal => { %>
-          <li>
-            <a href="/persian-animals?id=<%= animal.id %>">
-              <%= animal.name %>
-            </a>
-            — <%= animal.type %>
-          </li>
-          <% }) %>
-        </ul>
-      </section>
-      <% } %> <% if (selectedAnimal) { %>
+      <% } %> 
+      <% if (selectedAnimal) { %>
       <section class="animal__content">
-        <a href="/persian-animals">Back</a>
-
         <h1><%= selectedAnimal.name %></h1>
 
         <img
@@ -40,7 +28,7 @@
         <p><strong>Weight:</strong> <%= selectedAnimal.weight %></p>
         <p><strong>Food:</strong> <%= selectedAnimal.food %></p>
         <p><strong>Description:</strong> <%= selectedAnimal.description %></p>
-        <% } %>
+
       </section>
       <% } %>
     </main>

@@ -1,25 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= headTitle %></title>
-  </head>
+<%- include('../partials/head') %>
   <body>
-    <a href="/persian-animals">Back</a>
-
-    <h1><%= animal.name %></h1>
-
-    <img
-      src="/images/<%= animal.image %>"
-      alt="<%= animal.name %>"
-      width="300"
-    />
-
-    <p><strong>Type:</strong> <%= animal.type %></p>
-    <p><strong>Size:</strong> <%= animal.size %></p>
-    <p><strong>Weight:</strong> <%= animal.weight %></p>
-    <p><strong>Food:</strong> <%= animal.food %></p>
-    <p><strong>Description:</strong> <%= animal.description %></p>
+    <%- include('../partials/header') %>
+    <main class="main">
+      <%- include('../partials/sidebar') %>
+      <div>
+        <% if (selectedAnimal) { %>
+          <a href="/<%=headTitle.toLowerCase().replace(/ /g, "-") %>">Back</a>
+        
+          <h1><%= selectedAnimal.name %></h1>
+          <img
+            src="/images/<%= selectedAnimal.image %>"
+            alt="<%= selectedAnimal.name %>"
+            width="300"
+          />
+          <p><strong>Type:</strong> <%= selectedAnimal.type %></p>
+          <p><strong>Size:</strong> <%= selectedAnimal.size %></p>
+          <p><strong>Weight:</strong> <%= selectedAnimal.weight %></p>
+          <p><strong>Food:</strong> <%= selectedAnimal.food %></p>
+          <p><strong>Description:</strong> <%= selectedAnimal.description %></p>
+        
+        <%} else { %>
+          <h2>Here is from <%= pageType.toUpperCase() %></h2>
+          <p>Explore the unique wildlife of this country, from forests and mountains to rivers and plains. 
+            Each species has adapted to its environment, showing fascinating behaviors, diets, 
+            and appearances. Learn about their habitats, cultural significance, and the ways 
+            humans interact with and protect these animals. Discover the diversity and beauty of 
+            nature here.</p>
+            <% animalList.filter(animals => animals.country === pageType ).forEach(animals => { %>
+          <img
+            src="/images/<%= animals.image %>"
+            alt="<%= animals.name %>"
+            width="200"
+          />
+          <p><%= animals.name %></p>
+          <%})%>
+        <% } %>
+      </div>
+    </main>
+    <%- include('../partials/footer') %>
   </body>
 </html>

@@ -1,19 +1,20 @@
 import express from "express";
-import { PersianAnimalList } from "../data/PersianAnimalList.js";
+import * as path from "path";
+import { animalList } from "../data/animalList.js";
 
-const router = express.Router();
+const persianAnimalRouter = express.Router();
+const __dirname = path.resolve();
 
-router.get("/persian-animals", (req, res) => {
-  const animal = PersianAnimalList.find(
-    (animalList) => animalList.id === req.query.id
-  );
+persianAnimalRouter.get("/", (req, res) => {
+  const animal = animalList.find((animal) => animal.id === req.query.id);
+  console.log(animal);
 
-  res.render("pages/index", {
-    headTitle: "Asian Zoo",
-    welcomeMessage: "Welcome! Click an animal name to see its details.",
-    animalList: PersianAnimalList,
-    selectedAnimal: animal || null,
+  res.render(path.join(__dirname, "/views/pages/animal.ejs"), {
+    headTitle: "Persian Animals",
+    pageType: "iran",
+    animalList: animalList,
+    selectedAnimal: animal,
   });
 });
 
-export default router;
+export default persianAnimalRouter;
