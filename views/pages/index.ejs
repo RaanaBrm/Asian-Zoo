@@ -3,7 +3,8 @@
   <%- include('../partials/head') %>
   <body>
     <%- include('../partials/header') %>
-    <main>
+    <main class="main">
+      <%- include('../partials/sidebar') %>
       <% if (!selectedAnimal) { %>
       <section class="welcome">
         <h1>Asian Zoo Exhibition</h1>
@@ -13,8 +14,6 @@
       <% } %> 
       <% if (selectedAnimal) { %>
       <section class="animal__content">
-        <a href="/persian-animals">Back</a>
-
         <h1><%= selectedAnimal.name %></h1>
 
         <img
