@@ -1,5 +1,5 @@
-<%- include('../partials/head', { headTitle }) %> <%-
-include('../partials/header') %>
+<%- include('../partials/head', { headTitle }) %>
+<%-include('../partials/header') %>
 
 <main class="layout">
   <!-- SIDEBAR -->
@@ -8,7 +8,7 @@ include('../partials/header') %>
     <ul>
       <% aboutList.forEach(person => { %>
       <li>
-        <a href="/about?id=<%= person.id %>"> <%= person.name %> </a>
+        <a href="/about?id=<%= person.id %>"><%= person.name %></a>
       </li>
       <% }) %>
     </ul>
