@@ -3,7 +3,7 @@ import * as path from "path";
 import "dotenv/config";
 import japaneseAnimalRouter from "./routes/JapaneseAnimalRoute.js";
 import persianAnimalRouter from "./routes/PersianAnimalRoute.js";
-import chineseAnimalRouter from "./routes/ChineseAnimalRouter";
+import chineseAnimalRouter from "./routes/ChineseAnimalRouter.js";
 import { animalList } from "./data/animalList.js";
 
 const app = express();
