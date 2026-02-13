@@ -1,0 +1,12 @@
+<section class="hero <%= pageType === 'index' ? 'hero--home' : 'hero--animal' %>">
+  <div class="hero__content">
+    <% if (pageType === 'index') { %>
+      <h1>THE WILD WORKS WONDERS</h1>
+      <p>From now until the end of March, reconnect with nature...</p>
+    <% } else { %>
+      <h1>from <%= pageType.charAt(0).toUpperCase() + pageType.slice(1) %></h1>
+      <p>Discover the unique wildlife of this region.</p>
+    <% } %>
+  </div>
+</section>
+
