@@ -11,7 +11,7 @@ chineseAnimalRouter.get("/", (req, res) => {
 
   res.render(path.join(__dirname, "/views/pages/animal.ejs"), {
     headTitle: "Chinese Animals",
-    pageType: "china",
+    pageType: "China",
     animalList: animalList,
     selectedAnimal: animal,
   });
