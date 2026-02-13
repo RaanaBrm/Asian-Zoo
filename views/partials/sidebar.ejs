@@ -1,30 +1,30 @@
 <div class="sidebar">
     <% if (locals.pageType) { %>
-        <% if(pageType === "japan") { %>
+        <% if(pageType === "Japan") { %>
           <h3> from <%= pageType %></h3>
           <ul>
-            <% animalList.filter(list => list.country ==="japan").forEach( list => {  %>
+            <% animalList.filter(list => list.country ==="Japan").forEach( list => {  %>
                 <li><a href="/japanese-animals?id=<%= list.id %>"><%= list.name %></a></li>
             <% });  %>
           </ul>
-        <%} else if (pageType === "iran") {%>
-          <h3> from <%= pageType.toUpperCase() %></h3>
+        <%} else if (pageType === "Iran") {%>
+          <h3> From <%= pageType.toUpperCase() %></h3>
           <ul>
-        <% animalList.filter(list => list.country ==="iran").forEach( list => {  %>
+        <% animalList.filter(list => list.country ==="Iran").forEach( list => {  %>
             <li><a href="/persian-animals?id=<%= list.id %>"><%= list.name %></a></li>
         <% });  %>
         </ul>
-        <% }else if(pageType === "china") { %>
-          <h3> from <%= pageType.toUpperCase() %></h3>
+        <% }else if(pageType === "China") { %>
+          <h3> From <%= pageType.toUpperCase() %></h3>
           <ul>
-            <% animalList.filter(list => list.country ==="china").forEach( list => {  %>
+            <% animalList.filter(list => list.country ==="China").forEach( list => {  %>
                 <li><a href="/chinese-animals?id=<%= list.id %>"><%= list.name %></a></li>
             <% });  %>
           </ul>
         <%} else { %>
-          <h3> from Asia</h3>
+          <h3> From Asia</h3>
           <ul>
-            <% ["iran", "china", "japan"].forEach(country => { %>
+            <% ["Iran", "China", "Japan"].forEach(country => { %>
               <% animalList
                    .filter(animal => animal.country === country)
                    .forEach(list => { %>
