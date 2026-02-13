@@ -2,20 +2,14 @@
     <a href="/" class="logo-link">
         <img src="/images/header-logo.png" alt="Asian Zoo Logo" class="header-logo">
     </a>
-
-
-
-    <nav>
-    <a href="/" class="<%= pageType === 'index' ? 'active-link' : '' %>">Home</a>
-
-    <a href="/persian-animals" class="<%= pageType === 'Iran' ? 'active-link' : '' %>">Iran</a>
-
-    <a href="/chinese-animals" class="<%= pageType === 'China' ? 'active-link' : '' %>">China</a>
-
-    <a href="/japanese-animals" class="<%= pageType === 'Japan' ? 'active-link' : '' %>">Japan</a>
-
-    <a href="/about" class="<%= pageType === 'about' ? 'active-link' : '' %>">About Us</a>
+    <div class="hamburger-menu"><i class="fa-solid fa-bars"></i></div>
+    <nav class="nav">
+    <ul>
+        <li><a href="/" class="<%= pageType === 'index' ? 'active-link' : '' %>">Home</a></li>   
+        <li><a href="/persian-animals" class="<%= pageType === 'Iran' ? 'active-link' : '' %>">Iran</a></li>   
+        <li><a href="/chinese-animals" class="<%= pageType === 'China' ? 'active-link' : '' %>">China</a></li>   
+        <li><a href="/japanese-animals" class="<%= pageType === 'Japan' ? 'active-link' : '' %>">Japan</a></li>   
+        <li><a href="/about" class="<%= pageType === 'about' ? 'active-link' : '' %>">About Us</a></li>   
+    </ul>
 </nav>
-
-
 </header>
