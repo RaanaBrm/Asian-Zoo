@@ -8,42 +8,56 @@
 
     <main class="main">
       <%- include('../partials/sidebar') %>
-      <% if (!selectedAnimal) { %>
-        <div class="home-intro-container">
+      
+        <div id="welcome-view" class="home-intro-container">
           <div class="home-text">
         <h1>Where Asian wildlife meets culture and tradition</h1>
-        <p><%= welcomeMessage %></p>
+        <p>
+          <%= typeof welcomeMessage !== 'undefined' ? welcomeMessage : 'Welcome to the Zoo!' %>
+        </p>
         </div>
+
         <div class="home-image">
-                <img src="/images/home-intro.jpeg" alt="Zoo Interaction">
+          <img src="/images/home-intro.jpeg" alt="Zoo Interaction">
         </div>
-      
       </div>
-      <% } %> 
 
-
-      <% if (selectedAnimal) { %>
-      <div class="animal-details-card">
-          <h1><%= selectedAnimal.name %></h1>
-          <p><strong>Type:</strong> <%= selectedAnimal.type %></p>
-          <p><strong>Size:</strong> <%= selectedAnimal.size %></p>
-          <p><strong>Weight:</strong> <%= selectedAnimal.weight %></p>
-          <p><strong>Food:</strong> <%= selectedAnimal.food %></p>
+      <div id="details-view" class="animal-details-card hidden">
+          <h1 id="det-name">Animal Name</h1>
+          <p><strong>Type:</strong> 
+            <span id="det-type"></span>
+          </p>
+          <p><strong>Size:</strong> 
+            <span id="det-size"></span>
+          </p>
+          <p><strong>Weight:</strong> 
+            <span id="det-weight"></span>
+          </p>
+          <p><strong>Food:</strong> 
+            <span id="det-food"></span>
+          </p>
           
           <img
-            src="/images/<%= selectedAnimal.image %>"
-            alt="<%= selectedAnimal.name %>"
+            id="det-image"
+            src=""
+            alt="Animal"
             width="300" 
             class="details-image"
           />
       
-          <p class="description"><strong>Description:</strong> <%= selectedAnimal.description %></p>
-          <a href="/<%=headTitle.toLowerCase().replace(/ /g, "-") %>">Back</a>
-          </div>-
-
-      <% } %>
+          <p class="description"><strong>Description:</strong> 
+            <span id="det-description"></span>
+          </p>
+          <button id="back-button" class="btn-back" style="padding: 10px 20px; cursor: pointer;">
+            Back
+          </button>         
     </main>
 
     <%- include('../partials/footer') %>
+    <script>
+      const animalData = <%- (typeof animalList !== 'undefined') ? JSON.stringify(animalList) : '[]' %>;
+    </script>
+
+    </script><script src="/js/script.js"></script>
   </body>
 </html>
